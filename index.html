@@ -1,1 +1,25 @@
-Hello.
+<!DOCTYPE html>
+<html>
+<head>
+<script type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
+<script type='text/javascript' src='js/Config.js'></script>
+</head>
+<body>
+<div id='testDiv'>Loading...</div>
+<script>
+function updateDiv(str) {
+    $('#testDiv').html(str)
+}
+$(document).ready(function(){
+    $.ajax({
+        url: config.url.jsonp,
+        dataType: "jsonp",
+        data: null,
+        success: function(result) {
+            console.log(result);
+        }
+    });
+})
+</script>
+</body>
+</html>
